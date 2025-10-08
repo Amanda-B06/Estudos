@@ -1,0 +1,5 @@
+Ipv4- Um meio padrão de comunicação entre a rede e a internet, identificando o dispositivo dentro deles.
+
+Máscara de Sub rede- Divisão de uma rede de computadores, uma parte correspondente à rede pública, um caminho entre a conexão e servidor.
+
+Gateway padrão- Roteador que separa as redes interna e externa, fornece funções básicas de segurança.

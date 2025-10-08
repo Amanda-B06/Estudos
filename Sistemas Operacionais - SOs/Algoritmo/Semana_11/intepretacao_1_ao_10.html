@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpretação de Código - Condicionais e Laços</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-item-active {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            color: white;
+        }
+        .code-block {
+            background-color: #1f2937; /* Tailwind gray-800 */
+            color: #f3f4f6; /* Tailwind gray-100 */
+            padding: 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem; /* text-sm */
+        }
+        .questions-block {
+            background-color: #f9fafb; /* Tailwind gray-50 */
+            padding: 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+            margin-top: 1.5rem;
+        }
+        .questions-block ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+        }
+        .questions-block li {
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-blue-600">Interpretação de Código</h1>
+            <p class="text-lg text-gray-600 mt-2">Exercícios de Condicionais com Introdução a Laços</p>
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-6">
+            <aside class="md:w-1/4 bg-white p-6 rounded-lg shadow-lg max-h-[80vh] overflow-y-auto">
+                <h2 class="text-xl font-semibold mb-4 text-blue-700 border-b pb-2 sticky top-0 bg-white">Códigos</h2>
+                <nav id="code-nav" class="space-y-1">
+                </nav>
+            </aside>
+
+            <main id="code-content-area" class="md:w-3/4 bg-white p-6 rounded-lg shadow-lg min-h-[60vh]">
+                <div id="code-placeholder" class="text-center text-gray-500 flex flex-col justify-center items-center h-full">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto mb-4 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4m0 0l-4-4m4 4V4M7 7h10M7 12h4m1.5 0h.01M7 17h4m1.5 0h.01" />
+                    </svg>
+                    <p class="text-xl">Selecione um código ao lado para começar a interpretação.</p>
+                    <p class="text-sm mt-2">Analise cada trecho de código e responda às questões propostas.</p>
+                </div>
+            </main>
+        </div>
+
+        <footer class="mt-12 text-center text-sm text-gray-500">
+            <p>&copy; <span id="currentYear"></span> Plataforma de Revisão de Algoritmos. Desenvolvido para fins didáticos.</p>
+        </footer>
+    </div>
+
+    <script>
+        const interpretationCodes = [
+            {
+                id: 1,
+                title: "Média e Aprovação (Ref. Ex 19)",
+                code: `programa
+{
+    funcao inicio()
+    {
+        real nota1, nota2, media
+        escreva("Digite a primeira nota: ")
+        leia(nota1)
+        escreva("Digite a segunda nota: ")
+        leia(nota2)
+
+        media = (nota1 + nota2) / 2.0
+
+        escreva("\\nA média do aluno foi: ", media, "\\n")
+
+        se (media >= 7.0) {
+            escreva("Aluno com bom aproveitamento! (Aprovado)\\n")
+        } senao {
+            escreva("Aluno precisa melhorar. (Reprovado/Recuperação)\\n")
+        }
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se o usuário digitar `8.0` para a primeira nota e `9.0` para a segunda, qual será a saída EXATA do programa?",
+                    "E se a condição `se (media >= 7.0)` fosse alterada para `se (media > 7.0)`, um aluno com média exatamente `7.0` teria um bom aproveitamento segundo o programa?",
+                    "Se fosse necessário calcular a média para 30 alunos de uma turma, qual seria o bloco de código (da leitura das notas até a mensagem de aproveitamento) que precisaria ser repetido?"
+                ]
+            },
+            {
+                id: 2,
+                title: "Multa de Velocidade (Ref. Ex 17)",
+                code: `programa
+{
+    const inteiro VELOCIDADE_MAXIMA = 80
+    const real VALOR_POR_KM_EXCEDIDO = 5.0
+
+    funcao inicio()
+    {
+        inteiro velocidade_carro
+        real valor_multa
+
+        escreva("Qual a velocidade do carro (Km/h)? ")
+        leia(velocidade_carro)
+
+        se (velocidade_carro > VELOCIDADE_MAXIMA) {
+            valor_multa = (velocidade_carro - VELOCIDADE_MAXIMA) * VALOR_POR_KM_EXCEDIDO
+            escreva("MULTADO! Você excedeu o limite de ", VELOCIDADE_MAXIMA, " Km/h.\\n")
+            escreva("Valor da multa: R$ ", valor_multa, "\\n")
+        } senao {
+            escreva("Velocidade dentro do permitido. Boa viagem!\\n")
+        }
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se o motorista passar a `95` Km/h, qual será a saída completa do programa?",
+                    "E se o `VALOR_POR_KM_EXCEDIDO` fosse alterado para `7.0` e o motorista passasse a `100` Km/h, qual seria o valor da multa?",
+                    "Imagine um sistema de radar que fica verificando os carros continuamente. Enquanto houver carros passando, qual é a principal verificação (a condição `se`) que o algoritmo executaria repetidamente?"
+                ]
+            },
+            {
+                id: 3,
+                title: "Preço Promocional (Ref. Ex 12)",
+                code: `programa
+{
+    const real FATOR_DESCONTO = 0.05 // Representa 5%
+
+    funcao inicio()
+    {
+        real preco_original, preco_final, valor_desconto
+
+        escreva("Digite o preço do produto: R$ ")
+        leia(preco_original)
+
+        valor_desconto = preco_original * FATOR_DESCONTO
+        preco_final = preco_original - valor_desconto
+
+        escreva("\\n--- Cupom Fiscal ---\\n")
+        escreva("Preço Original: R$ ", preco_original, "\\n")
+        escreva("Desconto (5%): R$ ", valor_desconto, "\\n")
+        escreva("Preço Final: R$ ", preco_final, "\\n")
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se o usuário digitar `200.00` como preço, qual será a saída completa do programa?",
+                    "E se a constante `FATOR_DESCONTO` fosse alterada para `0.10` (10%), qual seria o `preco_final` para um produto de R$ 300.00?",
+                    "Se um caixa de supermercado precisasse aplicar este desconto em 50 produtos de um carrinho de compras, qual seria o principal cálculo que se repetiria para cada produto?"
+                ]
+            },
+            {
+                id: 4,
+                title: "Alistamento Militar (Ref. Ex 22)",
+                code: `programa
+{
+    const inteiro ANO_ATUAL = 2025
+    const inteiro IDADE_ALISTAMENTO = 18
+
+    funcao inicio()
+    {
+        inteiro ano_nascimento, idade, anos_faltantes, anos_passados
+
+        escreva("Em que ano você nasceu? ")
+        leia(ano_nascimento)
+
+        idade = ANO_ATUAL - ano_nascimento
+        escreva("Sua idade em ", ANO_ATUAL, " é: ", idade, " anos.\\n")
+
+        se (idade < IDADE_ALISTAMENTO) {
+            anos_faltantes = IDADE_ALISTAMENTO - idade
+            escreva("Ainda faltam ", anos_faltantes, " ano(s) para o seu alistamento.\\n")
+        } senao se (idade > IDADE_ALISTAMENTO) {
+            anos_passados = idade - IDADE_ALISTAMENTO
+            escreva("Você deveria ter se alistado há ", anos_passados, " ano(s).\\n")
+        } senao {
+            escreva("Você deve se alistar IMEDIATAMENTE!\\n")
+        }
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se um jovem nasceu em `2009` e o ano atual é `2025`, qual será a mensagem sobre o alistamento exibida para ele?",
+                    "E se a `IDADE_ALISTAMENTO` fosse alterada para `21` anos, qual seria a mensagem para um jovem que nasceu em `2004` (considerando `ANO_ATUAL = 2025`)?",
+                    "Imagine uma junta militar analisando uma lista de jovens. Enquanto houver jovens na lista, qual é o primeiro cálculo essencial (`idade = ...`) que o sistema precisa refazer para cada um?"
+                ]
+            },
+            {
+                id: 5,
+                title: "Par ou Ímpar (Ref. Ex 20)",
+                code: `programa
+{
+    funcao inicio()
+    {
+        inteiro numero
+        escreva("Digite um número inteiro: ")
+        leia(numero)
+
+        // O operador '%' retorna o resto de uma divisão inteira.
+        // Se o resto da divisão por 2 for 0, o número é par.
+        se (numero % 2 == 0) {
+            escreva("O número ", numero, " é PAR.\\n")
+        } senao {
+            escreva("O número ", numero, " é ÍMPAR.\\n")
+        }
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se o usuário digitar o número `15`, qual será a saída do programa?",
+                    "E se a condição do `se` fosse alterada para `se (numero % 2 != 0)`, qual seria a mensagem exibida para o número `10`?",
+                    "Se você quisesse que o programa continuasse pedindo números ao usuário até que ele digitasse `0`, qual seria a condição de parada de um laço de repetição?"
+                ]
+            },
+            {
+                id: 6,
+                title: "Preço da Passagem (Ref. Ex 24)",
+                code: `programa
+{
+    funcao inicio()
+    {
+        real distancia, preco_passagem
+
+        escreva("Qual a distância da viagem em Km? ")
+        leia(distancia)
+
+        se (distancia <= 200.0) {
+            preco_passagem = distancia * 0.50
+        } senao {
+            preco_passagem = distancia * 0.45
+        }
+
+        escreva("O preço da sua passagem será de R$ ", preco_passagem, "\\n")
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se um passageiro deseja percorrer `300` Km, qual será o preço da passagem?",
+                    "E se a condição `distancia <= 200.0` fosse alterada para `distancia < 200.0`, qual seria o preço para uma viagem de exatamente `200` Km?",
+                    "Enquanto houver passageiros em uma fila para comprar passagens, qual é a primeira informação que o algoritmo precisa solicitar repetidamente a cada um?"
+                ]
+            },
+            {
+                id: 7,
+                title: "Aumento de Salário (Ref. Ex 13)",
+                code: `programa
+{
+    const real FATOR_AUMENTO = 1.15 // 100% do salário + 15% de aumento
+
+    funcao inicio()
+    {
+        real salario_atual, novo_salario
+
+        escreva("Qual o salário atual do funcionário? R$ ")
+        leia(salario_atual)
+
+        novo_salario = salario_atual * FATOR_Aumento
+
+        escreva("O novo salário, com 15% de aumento, será de R$ ", novo_salario, "\\n")
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se o salário atual for `2000.00`, qual será o novo salário calculado?",
+                    "E se a constante `FATOR_AUMENTO` fosse alterada para `1.0` (representando um aumento de 0%), qual seria o valor do `novo_salario`?",
+                    "Se o departamento de RH precisasse aplicar este mesmo cálculo para 100 funcionários, qual seria a operação matemática que se repetiria para cada um deles?"
+                ]
+            },
+            {
+                id: 8,
+                title: "Aluguel de Carro (Ref. Ex 14)",
+                code: `programa
+{
+    const real CUSTO_POR_DIA = 90.0
+    const real CUSTO_POR_KM = 0.20
+
+    funcao inicio()
+    {
+        inteiro dias_alugados
+        real km_percorridos
+        real preco_total
+
+        escreva("Quantos dias o carro foi alugado? ")
+        leia(dias_alugados)
+        escreva("Quantos Km foram percorridos? ")
+        leia(km_percorridos)
+
+        preco_total = (dias_alugados * CUSTO_POR_DIA) + (km_percorridos * CUSTO_POR_KM)
+
+        escreva("O valor total a pagar é: R$ ", preco_total, "\\n")
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se um cliente alugou o carro por `5` dias e percorreu `300` Km, qual será o `preco_total`?",
+                    "E se o `CUSTO_POR_DIA` fosse R$ 100.00 e o `CUSTO_POR_KM` fosse R$ 0.10, qual seria o preço para 2 dias e 100 Km?",
+                    "Se uma locadora precisa calcular o valor a pagar para 10 clientes diferentes, qual é o bloco de cálculo (`preco_total = ...`) que seria executado para cada cliente?"
+                ]
+            },
+            {
+                id: 9,
+                title: "Desconto por Gênero (Ref. Ex 23)",
+                code: `programa
+{
+    funcao inicio()
+    {
+        cadeia nome
+        caracter sexo
+        real valor_compras, preco_final
+
+        escreva("Nome do(a) cliente: ")
+        leia(nome)
+        escreva("Sexo (M/F): ")
+        leia(sexo)
+        escreva("Valor das compras: R$ ")
+        leia(valor_compras)
+
+        se (sexo == 'F') {
+            // Mulheres ganham 13% de desconto
+            preco_final = valor_compras * 0.87
+        } senao {
+            // Homens ganham 5% de desconto
+            preco_final = valor_compras * 0.95
+        }
+        escreva("Preço com desconto para ", nome, ": R$ ", preco_final, "\\n")
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se a cliente `Maria`, do sexo `F`, gastou `200.00`, qual será o `preco_final`?",
+                    "E se a condição `se (sexo == 'F')` fosse alterada para `se (sexo == 'M')`, qual seria o desconto aplicado para um cliente do sexo masculino ('M')? O comportamento do programa mudaria?",
+                    "Enquanto houver clientes na fila do caixa, qual é a primeira pergunta (`leia(sexo)`) que o sistema faz para decidir qual percentual de desconto aplicar?"
+                ]
+            },
+            {
+                id: 10,
+                title: "Direito a Voto (Ref. Ex 18)",
+                code: `programa
+{
+    const inteiro ANO_ATUAL = 2025
+
+    funcao inicio()
+    {
+        inteiro ano_nascimento, idade
+
+        escreva("Em que ano você nasceu? ")
+        leia(ano_nascimento)
+
+        idade = ANO_ATUAL - ano_nascimento
+
+        se (idade >= 16) {
+            escreva("Com ", idade, " anos, você já pode votar.\\n")
+        } senao {
+            escreva("Com ", idade, " anos, você ainda não pode votar.\\n")
+        }
+    }
+}`,
+                questions: [
+                    "Qual o objetivo principal deste algoritmo?",
+                    "Se uma pessoa nasceu no ano de `2010` (e o ano atual é `2025`), qual será a mensagem exibida?",
+                    "E se a condição `idade >= 16` fosse alterada para `idade > 16`, uma pessoa que completou exatamente 16 anos poderia votar, segundo a lógica deste algoritmo? Por quê?",
+                    "Enquanto houver cidadãos em uma fila para verificar sua situação eleitoral, qual é o cálculo (`idade = ...`) que deve ser refeito para cada pessoa antes de tomar a decisão?"
+                ]
+            }
+        ];
+
+        const navContainer = document.getElementById('code-nav');
+        const contentArea = document.getElementById('code-content-area');
+        const placeholder = document.getElementById('code-placeholder');
+        let currentActiveButton = null;
+
+        function displayCode(codeId) {
+            const codeItem = interpretationCodes.find(c => c.id === codeId);
+            if (!codeItem) {
+                contentArea.innerHTML = '<p class="text-red-500">Código de interpretação não encontrado.</p>';
+                return;
+            }
+
+            if(placeholder) placeholder.style.display = 'none';
+
+            let questionsHtml = '<ol>';
+            codeItem.questions.forEach(q => {
+                questionsHtml += `<li>${q.replace(/`([^`]+)`/g, '<code class="bg-gray-200 text-sm text-pink-600 px-1 rounded">$1</code>')}</li>`;
+            });
+            questionsHtml += '</ol>';
+            
+            contentArea.innerHTML = `
+                <article id="code-interpretation-${codeItem.id}">
+                    <h2 class="text-3xl font-bold text-blue-700 mb-4 border-b-2 border-blue-200 pb-3">Código ${codeItem.id}: ${codeItem.title}</h2>
+                    
+                    <div class="code-block mb-6">
+                        <pre><code>${codeItem.code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+                    </div>
+
+                    <div class="questions-block">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Questões de Interpretação:</h3>
+                        ${questionsHtml}
+                    </div>
+                </article>
+            `;
+        }
+
+        function setActiveButton(button) {
+            if (currentActiveButton) {
+                currentActiveButton.classList.remove('nav-item-active', 'bg-blue-500', 'text-white');
+                currentActiveButton.classList.add('bg-gray-200', 'hover:bg-gray-300', 'text-gray-700');
+            }
+            button.classList.remove('bg-gray-200', 'hover:bg-gray-300', 'text-gray-700');
+            button.classList.add('nav-item-active', 'bg-blue-500', 'text-white');
+            currentActiveButton = button;
+        }
+
+        interpretationCodes.sort((a, b) => a.id - b.id).forEach(cItem => {
+            const button = document.createElement('button');
+            button.textContent = `Código ${cItem.id}`;
+            button.classList.add(
+                'w-full', 'text-left', 'px-4', 'py-2', 'rounded-md', 
+                'transition', 'duration-150', 'ease-in-out', 
+                'font-medium', 'bg-gray-200', 'hover:bg-gray-300', 'text-gray-700'
+            );
+            button.addEventListener('click', () => {
+                displayCode(cItem.id);
+                setActiveButton(button);
+            });
+            navContainer.appendChild(button);
+        });
+        
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
