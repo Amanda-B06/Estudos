@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega_007</title>
+    <link rel="shortcut icon" href="../Semana_07/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+
+        <header>
+            <h1> WIKIPEDIA </h1>
+            <p> A enciclopédia livre </p>
+        </header>
+
+        <main>
+             <h1>Cascading Style Sheets</h1>
+                <hr>
+                <p><strong>Cascading Style Sheets</strong> (<a href="https://pt.wikipedia.org/wiki/Abreviatura">abreviado</a> CSS) é um mecanismo para adicionar <a href="https://pt.wikipedia.org/wiki/Estilo_(arte)">estilos</a> (cores, fontes, espaçamentos, etc.) a uma <a href="https://pt.wikipedia.org/wiki/HTML">página web</a>, <sup>[1]</sup>, aplicado diretamente nas tags HTML ou ficar contido dentro das tags &lt;style&gt;. Também é possível, adicionar estilos adicionando um <a href="https://pt.wikipedia.org/wiki/Hiperliga%C3%A7%C3%A3o">link</a> para um arquivo CSS que contém os estilos. Assim, quando se quiser alterar a aparência dos documentos vinculados a este CSS, basta modifica-lo.</p>
+                <p>Com a variação de atualizações dos <a href="https://pt.wikipedia.org/wiki/Navegador_web">navegadores</a>, o suporte ao CSS pode variar. A interpretação dos navegadores pode ser avaliada com o teste <a href="https://pt.wikipedia.org/wiki/Acid2">Acid2</a>, que se tornou uma forma base de revelar quão eficiente é o suporte de CSS, fazendo com que a nova versão em desenvolvimento do Firefox seja totalmente compatível a ele, assim como o Opera já é. O <a href="https://pt.wikipedia.org/wiki/Doctype">Doctype</a> informado, ou a ausência dele, determina o <a href="https://pt.wikipedia.org/w/index.php?title=Quirks_mode&action=edit&redlink=1">quirks mode</a> ou o <a href="https://pt.wikipedia.org/w/index.php?title=Strict_mode&action=edit&redlink=1">strict mode</a>, modificando o modo como o CSS é interpretado e a página desenhada.
+                </p>
+
+
+            <article>
+
+                <h2>Sintaxe</h2>
+                <hr>
+                <hr>
+                <p>CSS tem uma sintaxe simples, e utiliza uma série de palavras em inglês para especificar os nomes de diferentes propriedade de estilo de uma página.</p>
+
+                <p>Uma instrução CSS consiste em um <strong>seletor</strong> e um <strong>bloco de declaração</strong>. Cada declaração contém uma <strong>propriedade</strong> e um <strong>valor</strong>, separados por dois pontos (:). Cada declaração é separada por ponto e vírgula (;).<sup>[2]</sup>
+                </p>
+
+                <p>Em CSS, <em>seletores</em> são usados para declarar a quais elementos de marcação um estilo se aplica, uma espécie de expressão correspondente. Os seletores podem ser aplicados a todos os elementos de um tipo específico, ou apenas aqueles elementos que correspondam a um determinado atributo; elementos podem ser combinados, dependendo de como eles são colocados em relação uns aos outros no código de marcação, ou como eles estão aninhados dentro do objeto de documento modelo.</p>
+
+                <p>Pseudoclasse é outra forma de especificação usada em CSS para identificar os elementos de marcação, e, em alguns casos, ações específicas de usuário para o qual um bloco de declaração especial se aplica. Um exemplo frequentemente utilizado é o hover pseudoclasse que se aplica um estilo apenas quando o usuário 'aponta para' o elemento visível, normalmente, mantendo o cursor do mouse sobre ele. Isto é anexado a um seletor como em a:hover ou #elementid:hover. Outras pseudoclasses e <em>pseudoelementos</em> são, p. ex., first-line, visited ou before. Uma pseudoclasse especialé: lang(c), "c".</p>
+
+                <p>Uma pseudoclasse seleciona elementos inteiros, tais como:link ou :visited, considerando que um pseudoelemento faz uma seleção que pode ser constituída por elementos parciais, tais como:first-line ou :first-letter.</p>
+
+                <p>Seletores podem ser combinados de outras formas também, especialmente em CSS 2.1, para alcançar uma maior especificidade e flexibilidade.</p>
+
+                <p>Aqui está um exemplo que resume as regras acima:</p>
+
+                <pre><code>
+                    selector [, selector2, ...][:pseudo-class] {
+                    property: value;
+                    [property2: value2;
+                    ...]
+                    }
+                    /* comment *
+                </pre></code>
+
+            </article>
+
+
+            <article>
+                <h2>Seletores</h2>
+                <hr>
+                <hr>
+
+                <p>
+                    Definição de estilo é um conjunto de propriedades visuais para um elemento, o CSS define regras que fazem as definições de estilo casarem com um elemento ou grupo de elemento, o documento pode conter um bloco de CSS num elemento style ou usando o elemento link apontando para um arquivo externo que contenha o bloco CSS.
+                </p>
+
+                <p>Para uso com o CSS, foi criado o atributo class que todo elemento pode conter.</p>
+
+                <p>As regras de casamento para o CSS são chamadas de seletores, uma definição de estilo pode ser casada com um seletor ou um grupo de seletores separados por vírgula, um seletor pode casar um elemento por:</p>
+
+                <ul type="square">
+                    <li><strong>elemento do tipo</strong>: element_name { style definition; }</li>
+
+                    <li><strong>elemento do tipo com a classe</strong>: element_name.class_name { style definition; }</li>
+
+                    <li><strong>todos os elementos com a classe</strong>: .class_name { style definition; }</li>
+
+                    <li><strong>o elemento com o id</strong>: #id_of_element { style definition; }</li>
+
+                    <li><strong>casamento de um grupo</strong>: element_name_01, element_name_02, .class_name { style definition; }</li>
+                </ul>
+
+                <p>Exemplos</p>
+                <pre><code>
+                p {text-align: right; color: #BA2;}
+                p.minhaclasse01 { color:#ABC; }
+                .minhaclasse02 { color:#CAD; }
+                # iddomeuelemento { color:#ACD; }
+                p.minhaclasse03 .minhaclasse04 { color:#ACD; }
+                </pre></code>
+
+            </article>
+
+            
+            <article>
+
+            <h2>Exemplos</h2>
+            <hr>
+            <hr>
+                
+            <pre><code>
+                /* comentário em css, semelhante aos da linguagem c */
+                body
+                {
+                font-family: Arial, Verdana, sans-serif;
+                background-color: #FFF;
+                margin: 5px 10px;
+                }
+            </pre></code>
+
+            <p>O código acima define fonte padrão Arial, caso não exista, substitui por Verdana, caso não exista, define qualquer fonte <a href="https://pt.wikipedia.org/wiki/Serifa">sans-serif</a>. Define também a cor de fundo do corpo da página.</p>
+
+            <p>Sua necessidade adveio do fato do <a href="https://pt.wikipedia.org/wiki/HTML">HTML</a>, aos poucos, ter deixado de ser usado apenas para criação de conteúdo na <a href="https://pt.wikipedia.org/wiki/World_Wide_Web">web</a>, e portanto havia uma mistura de formatação e conteúdo textual dentro do código de uma mesma página. Contudo, na criação de um grande portal, fica quase impossível manter uma identidade visual, bem como a produtividade do desenvolvedor. É nesse ponto que entra o <strong>CSS</strong>.</p>
+
+            <p>As especificações do <strong>CSS</strong> podem ser obtidas no site da <a href="https://pt.wikipedia.org/wiki/W3C">W<sub>3</sub>C</a> <q>World Wide Web Consortium</q>, um consórcio de diversas empresas que buscam estabelecer padrões para a <a href="https://pt.wikipedia.org/wiki/Internet">Internet</a>.</p>
+
+            <p>É importante notar que nenhum <a href="https://pt.wikipedia.org/wiki/Navegador_web">navegador</a> suporta igualmente as definições do CSS. Desta forma, o <em>web designer</em> deve sempre testar suas folhas de estilo em navegadores de vários fabricantes, e preferencialmente em mais de uma versão, para se certificar de que o que foi codificado realmente seja apresentado da forma desejada.</p>
+
+
+            <h3>Exemplo de CSS aplicado em XML</h3>
+            <p>Arquivo *.XML com ligação para uma folha de estilos em cascata:</p>
+
+            <pre><code>
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;?xml-stylesheet type="text/css" href="css.css"?&gt;
+                &lt;schedule&gt;
+                &lt;date&gt;Tuesday 20 June&lt;/date&gt;
+                &lt;programme&gt;
+                    &lt;starts&gt;6:00&lt;/starts&gt;
+                    &lt;title&gt;News&lt;/title&gt;
+                    With Michael Smith and Fiona Tolstoy.
+                    Followed by Weather with Malcolm Stott.
+                &lt;/programme&gt;
+                &lt;programme&gt;
+                    &lt;starts&gt;6:30&lt;/starts&gt;
+                    &lt;title&gt;Regional news update&lt;/title&gt;
+                    Local news for your area.
+                &lt;/programme&gt;
+                &lt;programme&gt;
+                    &lt;starts&gt;7:00&lt;/starts&gt;
+                    &lt;title&gt;Unlikely suspect&lt;/title&gt;
+                    Whimsical romantic crime drama starring Janet
+                    Hawthorne and Percy Trumpp.
+                &lt;/programme&gt;
+                &lt;/schedule&gt;
+            </pre></code>
+
+            <p>O arquivo *.CSS que formata o XML anterior:</p>
+
+            <pre><code>
+                @media screen {
+                    schedule {
+                    display: block;
+                    margin: 10px;
+                    width: 300px;
+                    }
+                    date {
+                    display: block;
+                    padding: 0.3em;
+                    font: bold x-large sans-serif;
+                    color: white;
+                    background-color: #C6C;
+                    }
+                    programme {
+                    display: block;
+                    font: normal medium sans-serif;
+                    }
+                    programme > * { /* All children of programme elements */
+                    font-weight: bold;
+                    font-size: large;
+                    }
+                    title {
+                    font-style: italic;
+                    }
+                }
+            </pre> </code>
+
+            <h3>CSS e JavaScript</h3>
+            <p>Pop-up não-bloqueável</p>
+
+            <pre><code>
+                &lt; html &gt;
+                &lt; head &gt;
+                    &lt;style type="text/css"&gt;
+                # popup {
+                        position: absolute;
+                        top: 30%;
+                        left: 30%;
+                        width: 300px;
+                        height: 150px;
+                        padding: 20px 20px 20px 20px;
+                        border-width: 2px;
+                        border-style: solid;
+                        background: #ffffa0;
+                        display: none;
+                    }
+                   &lt;/style&gt;
+                   &lt;script type="text/javascript"&gt;
+                    function abrir() {
+                        document.getElementById('popup').style.display = 'block';
+                        setTimeout ("fechar()", 3000);
+                    }
+                    function fechar() {
+                        document.getElementById('popup').style.display = 'none';
+                    }
+                &lt;/script&gt;
+            &lt;/head&gt;
+            &lt;body onload="abrir()" &gt;
+                &lt;div id="popup" class="popup"&gt;
+                    Esse é um exemplo de popup utilizando o elemento &lt;code&gt;div &lt;/code&gt;. Dessa maneira esse
+                    pop-up não será bloqueado.
+                   &lt;small&gt; &lt;a href="javascript: fechar();"&gt;[X] &lt;/a&gt; &lt;/small&gt;
+                &lt;/div&gt;
+            &lt;a href="javascript: abrir();"&gt;Abrir pop-up &lt;/a&gt;
+            &lt;a href="javascript: fechar();"&gt;Fechar pop-up &lt;/a&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </pre></code>
+
+            </article>
+
+
+            <article>
+
+                <h2>Padronização</h2>
+                <hr>
+                <hr>
+
+                <h3>Frameworks</h3>
+                <p>Os frameworks CSS são bibliotecas pré-preparadas destinadas a permitir um estilo mais fácil e mais compatível com os padrões de páginas da web usando a linguagem Cascading Style Sheets. Os frameworks CSS incluem Blueprint, Bootstrap, Cascade <a href="https://pt.wikipedia.org/wiki/Framework">Framework</a>, Foundation e Materialize. Assim como as bibliotecas de linguagem de programação e script, os frameworks CSS são geralmente incorporados como planilhas .css externas referenciadas no HTML &lt; head &gt;. Eles fornecem uma série de opções prontas para projetar e fazer o layout da página da web. Embora muitos desses frameworks tenham sido publicados, alguns autores os usam principalmente para prototipagem rápida, ou para aprender com, e preferem 'criar' CSS apropriado para cada site publicado sem a sobrecarga de design, manutenção e download de muitos recursos não utilizados no estilo do site.</p>
+
+
+                <h3>Metodologias de design</h3>
+                <p>Conforme o tamanho dos recursos CSS usados em um projeto aumenta, uma equipe de desenvolvimento geralmente precisa decidir sobre uma metodologia de design comum para mantê-los organizados. Os objetivos são facilidade de desenvolvimento, facilidade de colaboração durante o desenvolvimento e desempenho das folhas de estilo implementadas no navegador. As metodologias populares incluem OOCSS (CSS orientado a objeto), ACSS (CSS atômico), oCSS (folha de estilo em cascata orgânica), SMACSS (arquitetura escalável e modular para CSS) e BEM (bloco, elemento, modificador). <sub>[5]</sub></p>
+
+
+            </article>
+        </main>
+
+
+
+</body>
+
+</html>

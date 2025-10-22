@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Semana_07/favicon.ico" type="image/x-icon">
+    <title>form.003</title>
+</head>
+<body>
+    
+    <h1>Teste de Formulário</h1>
+
+     <form action="cadastro.php" method="get">
+        <!--Aréa Formulário com datas e numeros-->
+        <div> 
+
+            <label for="idnome">Nome: </label>
+            <input type="text"  name="Nome"
+            id="idnome"
+            required maxlength="30"
+            autocomplete="nome" placeholder="Nome Completo">
+        </div>
+
+        <div>
+            <label for="idmédia">Média: </label>
+            <input type="number" name="Média"
+            id="idmedia"
+            placeholder="numeros" min="0"
+            max ="25" step="1"
+            >
+        </div>
+
+        <div>
+            <label for="idbimestre">Bimestre: </label>
+            <input type="month"
+            name="Bimestre"
+            id="idbimestre">
+        </div>
+
+        <div>
+
+         <label for="iddia"> Dia da Prova: </label>
+         <input type="date" name="dia" id="iddia" value="2006-09-22">
+            
+        </div>
+        <!---Area dos Botoes-->
+
+        <Div>
+            <input type="submit" value="Enviar">
+            <input type="reset"  value="Limpar">
+        </Div>
+
+
+     </form>  
+        <a href="ex012.html"><button>Voltar</button></a>
+
+
+</body>
+</html>
