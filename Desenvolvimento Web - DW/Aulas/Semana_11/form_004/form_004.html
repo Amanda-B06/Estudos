@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 004</title>
+    <link rel="shortcut icon" href="../Semana_07/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <h1>Formulario para Envio de Dados Pessoais</h1>
+
+    <form action="cadastro.php" method="post" autocomplete="on">
+        
+        <fieldset action="cadastro.php" method="post" autocomplete="on">
+            <legend>Dados Pessoais</legend>
+                <div>
+                    <label for="idnome"> Nome </label>
+                    <input type="text" name="Nome" id="idnome" required minlength="5" maxlength="50" placeholder="Nome completo">
+                </div>
+
+                <div>
+                    <label for="idemail"> E-mail </label>
+                    <input type="email" name="E-mail" id="idemail" required placeholder="E-mail">
+                </div>
+
+                <div>
+                    <label for="idfone"> Telefone </label>
+                    <input type="tel" name="Telefone" id="idfone" required placeholder="(XX) XXXXXX-XXXX">
+                </div>
+        </fieldset>
+
+            <div>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </div>
+
+    </form>
+
+    <p> <a href="../ex_012/ex012.html" rel="prev"> <button> Voltar </button> </a> </p>
+
+</body>
+
+</html>
