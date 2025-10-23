@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 007</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <form action="cadastro.php" method="get" autocomplete="on">
+
+
+        <h1>Exemplo de Formulário</h1>
+
+        <div>
+            <label for="idestado"> Estado: </label>
+            <select name="estado" id="idestado">
+                <option label=""> Selecione um Estado </option>
+
+
+                <optgroup label="Sudeste">
+                    <option value="mg"> Minas Gerais </option>
+                    <option value="sp"> São Paulo </option>
+                    <option value="rj"> Rio de Janeiro </option>
+                    <option value="es"> Espírito Santo </option>
+                </optgroup>
+
+                <optgroup label="Nordeste">
+                    <option value="ba"> Bahia </option>
+                    <option value="pe"> Pernambuco </option>
+                    <option value="ce"> Ceará </option>
+                    <option value="rn"> Rio Grande do Norte </option>
+                </optgroup>
+
+                <optgroup label="Norte">
+                    <option value="am"> Amazonas </option>
+                    <option value="pa"> Pará </option>
+                    <option value="ro"> Rondônia </option>
+                    <option value="ac"> Acre </option>
+                </optgroup>
+
+                <optgroup label="Sul">
+                    <option value="rs"> Rio Grande do Sul </option>
+                    <option value="sc"> Santa Catarina </option>
+                    <option value="pr"> Paraná </option>
+                </optgroup>
+
+                <optgroup label="Centro-Oeste">
+                    <option value="df"> Distrito Federal </option>
+                    <option value="go"> Goiás </option>
+                    <option value="mt"> Mato Grosso </option>
+                    <option value="ms"> Mato Grosso do Sul </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+
+            <label for="idprofissao"> Profissão: </label>
+            <input type="text" name="profissao" id="idprofissao" list="profissoes">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="idmensagem"> Mensagem: </label>
+            <br>
+            <textarea name="mensagem" id="idmensagem" rows="13" cols="40" placeholder="Digite sua mensagem aqui..."></textarea>
+        </div>
+
+
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset"  value="Limpar">
+        </div>
+    </form>
+
+
+    <p> <a href="../ex_012/ex012.html"> <button> Voltar à lista</button> </a> </p>
+
+</body>
+
+</html>
