@@ -1,0 +1,25 @@
+header {
+    color: purple;
+}
+
+body {
+    background-color: palevioletred;
+}
+
+main {
+    background-color: azure;
+}
+
+p {
+    background-color: aquamarine;
+    color: blue;
+}
+
+ul {
+    background-color: black;
+    color: aliceblue
+}
+
+li.linha {
+    background-color: brown;
+}
