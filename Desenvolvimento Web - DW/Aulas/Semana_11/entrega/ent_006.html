@@ -10,26 +10,48 @@
 <body>
 
         <form action="cadastro.php" method="post" autocomplete="on">
-        <h1> Cadastro de Usuário </h1>
+            <h1> Cadastro de Usuário </h1>
 
-        <fieldset>
-            <legend> Informações Pessoais </legend>
+                <fieldset>
+                <legend> Informações Pessoais </legend>
+<br>
+                <div>
+                    <label for="idnome"> Nome Completo: </label>
+                    <input type="text" name="nome" id="idnome" required>
+                </div>
+<br>
+                <div>
+                    <label for="idemail"> E-mail: </label>
+                    <input type="email" name="email" id="idemail" required>
+                </div>
+<br>
+                <div>
+                    <label for="idsenha"> Senha: </label>
+                    <input type="password">
+                </div>
+<br>
+                <div>
+                    <label for="idnascimento"> Data de Nascimento: </label>
+                    <input type="date" name="data_nascimento" id="idnascimento">
+                </div>
+            </fieldset>
 
-            <div>
-                <label for="idnome"> Nome Completo: </label>
-                <input type="text" name="nome" id="idnome" required>
-            </div>
+<br>
 
-            <div>
-                <label for="idemail"> E-mail: </label>
-                <input type="email" name="email" id="idemail" required>
-            </div>
+            <fieldset>
+                <legend> Perfil </legend>
 
-            <div>
-                <label for="idsenha"> Senha: </label>
-                <input type="password">
-            </div>
-        </fieldset>
+                <div>
+                    <label for="idfoto"> Foto de Perfil: </label>
+                    <input type="file" name="foto_perfil" id="idfoto">
+                </div>
+<br>
+                <div>
+                    <label for="idbio"> Biografia: </label>
+                    <br>
+                    <textarea name="mensagem" id="idmensagem" rows="6" cols="60" placeholder="Digite sua mensagem aqui..."></textarea>
+                </div>
+            </fieldset>
         </form>
 
 
