@@ -6,20 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrega_007</title>
     <link rel="shortcut icon" href="../Semana_07/favicon.ico" type="image/x-icon">
+    <style>
+        h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        hr {
+            font-weight: bold;
+            padding: 2px;
+        }
+    </style>
 </head>
 
 <body>
 
 
         <header>
-            <h1> WIKIPEDIA </h1>
+            <h1>  WIKIPEDIA </h1>
             <p> A enciclopédia livre </p>
         </header>
 
         <main>
              <h1>Cascading Style Sheets</h1>
                 <hr>
-                <p><strong>Cascading Style Sheets</strong> (<a href="https://pt.wikipedia.org/wiki/Abreviatura">abreviado</a> CSS) é um mecanismo para adicionar <a href="https://pt.wikipedia.org/wiki/Estilo_(arte)">estilos</a> (cores, fontes, espaçamentos, etc.) a uma <a href="https://pt.wikipedia.org/wiki/HTML">página web</a>, <sup>[1]</sup>, aplicado diretamente nas tags HTML ou ficar contido dentro das tags &lt;style&gt;. Também é possível, adicionar estilos adicionando um <a href="https://pt.wikipedia.org/wiki/Hiperliga%C3%A7%C3%A3o">link</a> para um arquivo CSS que contém os estilos. Assim, quando se quiser alterar a aparência dos documentos vinculados a este CSS, basta modifica-lo.</p>
+                <p><strong><italic>Cascading Style Sheets</italic></strong> (<a href="https://pt.wikipedia.org/wiki/Abreviatura">abreviado</a> <strong>CSS</strong>) é um mecanismo para adicionar <a href="https://pt.wikipedia.org/wiki/Estilo_(arte)">estilos</a> (cores, fontes, espaçamentos, etc.) a uma <a href="https://pt.wikipedia.org/wiki/HTML">página web</a>, <sup>[1]</sup>, aplicado diretamente nas tags HTML ou ficar contido dentro das tags &lt;style&gt;. Também é possível, adicionar estilos adicionando um <a href="https://pt.wikipedia.org/wiki/Hiperliga%C3%A7%C3%A3o">link</a> para um arquivo CSS que contém os estilos. Assim, quando se quiser alterar a aparência dos documentos vinculados a este CSS, basta modifica-lo.</p>
                 <p>Com a variação de atualizações dos <a href="https://pt.wikipedia.org/wiki/Navegador_web">navegadores</a>, o suporte ao CSS pode variar. A interpretação dos navegadores pode ser avaliada com o teste <a href="https://pt.wikipedia.org/wiki/Acid2">Acid2</a>, que se tornou uma forma base de revelar quão eficiente é o suporte de CSS, fazendo com que a nova versão em desenvolvimento do Firefox seja totalmente compatível a ele, assim como o Opera já é. O <a href="https://pt.wikipedia.org/wiki/Doctype">Doctype</a> informado, ou a ausência dele, determina o <a href="https://pt.wikipedia.org/w/index.php?title=Quirks_mode&action=edit&redlink=1">quirks mode</a> ou o <a href="https://pt.wikipedia.org/w/index.php?title=Strict_mode&action=edit&redlink=1">strict mode</a>, modificando o modo como o CSS é interpretado e a página desenhada.
                 </p>
 
@@ -44,14 +55,14 @@
 
                 <p>Aqui está um exemplo que resume as regras acima:</p>
 
-                <pre><code>
-                    selector [, selector2, ...][:pseudo-class] {
-                    property: value;
-                    [property2: value2;
+        <pre><code>
+        <div style="color:green;">selector</div>[,<div style="color:green;">selector2</div>, ...][:pseudo-class] {
+            property: value;
+            [property2: value2;
                     ...]
                     }
-                    /* comment *
-                </pre></code>
+            /* comment */
+        </pre></code>
 
             </article>
 
@@ -83,11 +94,11 @@
 
                 <p>Exemplos</p>
                 <pre><code>
-                p {text-align: right; color: #BA2;}
-                p.minhaclasse01 { color:#ABC; }
-                .minhaclasse02 { color:#CAD; }
-                # iddomeuelemento { color:#ACD; }
-                p.minhaclasse03 .minhaclasse04 { color:#ACD; }
+                <color style="color: green;">p</color> {<color style="color: green;">text-align</color>: <color style="color: green;">right</color>; <color style="color: green;">color</color>: <color style="color: gray;">#BA2</color>;}
+                <color style="color: green;">p</color>.<color style="color: blue;">minhaclasse01</color> { <color style="color: green;">color</color>:<color style="color: gray;">#ABC</color>; }
+                .<color style="color: blue;">minhaclasse02</color> { <color style="color: green;">color</color>:<color style="color: gray;">#CAD</color>; }
+                # <color style="color: green;">iddomeuelemento</color> { <color style="color: green;">color</color>:<color style="color: gray;">#ACD</color>; }
+                <color style="color: green;">p</color>.<color style="color: blue;">minhaclasse03</color> .<color style="color: blue;">minhaclasse04</color> { <color style="color: green;">color</color>:<color style="color: gray;">#ACD</color>; }
                 </pre></code>
 
             </article>
@@ -100,12 +111,12 @@
             <hr>
                 
             <pre><code>
-                /* comentário em css, semelhante aos da linguagem c */
-                body
+                <color style="color: rgb(146, 187, 241);">/* comentário em css, semelhante aos da linguagem c */</color>
+                <color style="color: green;">body</color>
                 {
-                font-family: Arial, Verdana, sans-serif;
-                background-color: #FFF;
-                margin: 5px 10px;
+                <color style="color: green;">font-family</color>: Arial, Verdana, <color style="color: green;">sans-serif</color>;
+                <color style="color: green;">background-color</color>: <color style="color: gray;">#FFF</color>;
+                <color style="color: green;">margin</color>: <color style="color: gray;">5</color><color style="color: red;">px</color> <color style="color: gray;">10</color><color style="color: red;">px</color>;
                 }
             </pre></code>
 
