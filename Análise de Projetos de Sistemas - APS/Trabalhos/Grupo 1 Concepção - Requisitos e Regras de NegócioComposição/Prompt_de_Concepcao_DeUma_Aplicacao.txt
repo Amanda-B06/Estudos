@@ -1,0 +1,7 @@
+Gere uma pesquisa para servir como "fonte" para uma apresentação para Os meus colegas do técnico de informática, no terceiro semestre, entendendo a matéria de Análises de projeto de Sistemas e como funciona brevemente uma "Concepção de Uma Aplicação, Requisitos e regras de negócios". Esta pesquisa deve idealizar uma apresentação baseada nos tópicos: 
+1 - Ciclo de vida: Como o sistema deve ser sempre atualizado, sempre 'reformando' para que o sistema não fique com muitos erros e 'morra'.,
+2 - Requisitos funcionais e não-funcionais: Ter um bom acesso para qualquer tipo de pessoa e suas condições, ser prático e funcional. Mas também seja bem otimizado, rápido e sem bugs.
+3 - O Contrato: Seria um conjunto de requisitos entre os usuários e os stakeholders. É aí que eles testam e garantem que o software resolva o problema os usuários.
+4 - Diagrama de caso de uso: Basicamente ter um diagrama sobre o sistema e quem são os usuários.
+
+*A pesquisa não deve ter falar/citar a apresentação em si, o foco deve ser a base teórico/desenvolvimento do contrato.
