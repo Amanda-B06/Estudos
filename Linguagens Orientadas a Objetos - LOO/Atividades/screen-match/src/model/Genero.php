@@ -1,6 +1,8 @@
 <?php
 
-enum Genero {
+//Classe enumerada
+enum Genero
+{
     case Acao;
     case Aventura;
     case Musical;
