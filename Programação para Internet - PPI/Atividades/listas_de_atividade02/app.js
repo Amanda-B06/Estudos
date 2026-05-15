@@ -57,11 +57,26 @@ function ex008() {
 
 function ex009() {
 
-  let nota_01 = parseInt(document.getElementById("inputNumber1")).value;
-  let nota_02 = parseInt(document.getElementById("inputNumber2")).value;
-  let nota_03 = parseInt(document.getElementById("inputNumber3")).value;
+  let nota_01 = parseInt(document.getElementById("inputNumber1").value);
+  let nota_02 = parseInt(document.getElementById("inputNumber2").value);
+  let nota_03 = parseInt(document.getElementById("inputNumber3").value);
  
-  let resultado = document.getElementById("resultado2");
   let media = (nota_01+nota_02+nota_03)/3;
+  let resultado = document.getElementById("resultadoo");
   resultado.textContent = media;
 }
+
+function ex10(){
+  let nota_01 = parseInt(document.getElementById("Number1").value);
+  let nota_02 = parseInt(document.getElementById("Number2").value);
+
+  let resultadoo = document.getElementById("maioral")
+
+  if (nota_01 > nota_02){
+    resultadoo.textContent = nota_01;
+  }
+
+  else {
+    resultadoo.textContent = nota_02;
+  }
+ }

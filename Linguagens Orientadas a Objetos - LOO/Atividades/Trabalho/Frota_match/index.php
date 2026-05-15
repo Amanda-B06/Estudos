@@ -1,11 +1,10 @@
 <?php
 
-
-require __DIR__. 'src/Model/tipo_combustivel.php';
-require __DIR__. 'src/Model/veiculo.php';
-require __DIR__. 'src/Model/carro.php';
-require __DIR__. 'src/Model/onibus.php';
-require __DIR__. 'src/Services/calculadora_IPVA';
+require __DIR__. '/src/model/tipo_combustivel.php';
+require __DIR__. '/src/model/veiculo.php';
+require __DIR__. '/src/model/carro.php';
+require __DIR__. '/src/model/onibus.php';
+require __DIR__. '/src/services/calculadora_IPVA.php';
 
 
 // Instanciando os veículos

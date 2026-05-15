@@ -1,6 +1,5 @@
 <?php
 
-
 class geladeira extends produtos
 {
 
@@ -10,7 +9,7 @@ class geladeira extends produtos
         categoria_Eletronico $eletronico,
         public readonly int $quantidade_Garantia,
     ) {
-        return parent::__construct($nome, $preco_base, $eletronico);
+        parent::__construct($nome, $preco_base, $eletronico);
     }
 
     public function calcularTaxaEnvio(): float
