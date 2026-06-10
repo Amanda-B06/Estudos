@@ -4,7 +4,7 @@ export class DnaCard extends HTMLElement {
 
     super();
 
-  }
+  }  
 
   connectedCallback() {
 
