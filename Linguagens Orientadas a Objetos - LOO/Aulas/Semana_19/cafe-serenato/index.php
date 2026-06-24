@@ -1,60 +1,15 @@
 <?php
-$produtoCafe = [
-    [
-        'nome' => "Café Cremoso",
-        'descricao' => "Café cremoso irresistivelmente suave e que envolve seu paladar",
-        'preco' => "5.00",
-        'imagem' => "/assets/img/cafe-cremoso.jpg"
-    ],
-    [
-        'nome' => "Café com Leite",
-        'descricao' => "A harmonia do café e do leite, uma experiência reconfortante",
-        'preco' => "2.00",
-        'imagem' => "/assets/img/cafe-com-leite.jpg"
-    ],
 
-    [
-        'nome' => "Cappuccino",
-        'descricao' => "Café suave, leite cremoso e uma pitada de sabor adocicado",
-        'preco' => "7.00",
-        'imagem' => "/assets/img/cappuccino.jpg"
-    ],
+require "src/conexcao-bd.php";
+require "src/model/produtos.php";
+require "src/repository/ProdutosRepositorio.php";
 
-    [
-        'nome' => "Café Gelado",
-        'descricao' => "Café gelado refrescante, adoçado e com notas sutis de baunilha ou caramelo.",
-        'preco' => "3.00",
-        'imagem' => "/assets/img/cafe-gelado.jpg"
-    ]
 
-];
+$produtosRepositorio = new ProdutoRepositorio($pdo);
+$produtosCafe = $produtosRepositorio->getOpcoesCafe();
+$produtosAlmoco = $produtosRepositorio->getOpcoesAlmoco();
 
-$produtoAlmoco = [
-    [
-        "nome" => "Bife",
-        "descricao" => "Bife, arroz com feijão e uma deliciosa batata frita",
-        "preco" => "27.90",
-        "imagem" => "/assets/img/bife.jpg"
-    ],
-    [
-        "nome" => "Filé de peixe",
-        "descricao" => "Filé de peixe salmão assado, arroz, feijão verde e tomate.",
-        "preco" => "24.99",
-        "imagem" => "/assets/img/prato-peixe.jpg"
-    ],
-    [
-        "nome" => "Frango",
-        "descricao" => "Saboroso frango à milanesa com batatas fritas, salada de repolho e molho picante",
-        "preco" => "23.00",
-        "imagem" => "/assets/img/prato-frango.jpg"
-    ],
-    [
-        "nome" => "Fettuccine",
-        "descricao" => "Prato italiano autêntico da massa do fettuccine com peito de frango grelhado",
-        "preco" => "22.50",
-        "imagem" => "/assets/img/fettuccine.jpg"
-    ]
-]; ?>
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -84,35 +39,37 @@ $produtoAlmoco = [
         <section class="container-cafe-manha">
             <div class="container-cafe-manha-titulo">
                 <h3>Opções para o Café</h3>
-                <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                <img class="ornaments" src="/assets/img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-cafe-manha-produtos">
-                <?php foreach ($produtoCafe as $cafe): ?>
+                <?php foreach ($produtosCafe as $cafe): ?>
                     <div class="container-produto">
                         <div class="container-foto">
-                            <img src="<?php echo $cafe['imagem'] ?>">
+                            <img src="<?php echo $cafe->getImagem() ?>">
                         </div>
-                        <p><?php echo $cafe['nome'] ?></p>
-                        <p><?php echo $cafe['descricao'] ?></p>
-                        <p><?php echo "R$" . $cafe['preco'] ?></p>
+                        <p><?php echo $cafe->getNome() ?></p>
+                        <p><?php echo $cafe->getDescricao() ?></p>
+                        <p><?php echo $cafe->getPrecConversao() ?></p>
                     </div>
                 <?php endforeach; ?>
             </div>
         </section>
+
+
         <section class="container-almoco">
             <div class="container-almoco-titulo">
                 <h3>Opções para o Almoço</h3>
-                <img class="ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+                <img class="ornaments" src="/assets/img/ornaments-coffee.png" alt="ornaments">
             </div>
             <div class="container-almoco-produtos">
-                <?php foreach ($produtoAlmoco as $almoco): ?>
+                <?php foreach ($produtosAlmoco as $almoco): ?>
                     <div class="container-produto">
                         <div class="container-foto">
-                            <img src="<?php echo $almoco['imagem'] ?>">
+                            <img src="<?php echo $almoco->getImagem() ?>">
                         </div>
-                        <p><?php echo $almoco['nome'] ?></p>
-                        <p><?php echo $almoco['descricao'] ?></p>
-                        <p><?php echo "R$" . $almoco['preco'] ?></p>
+                        <p><?php echo $almoco->getNome() ?></p>
+                        <p><?php echo $almoco->getDescricao() ?></p>
+                        <p><?php echo $almoco->getPrecConversao() ?></p>
                     </div>
                 <?php endforeach; ?>
             </div>
